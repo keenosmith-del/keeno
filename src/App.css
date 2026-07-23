@@ -83,8 +83,8 @@ body {
 
     color: rgba(231, 226, 217, 0.55);
 
-    font-size: 0.88rem;
-    font-weight: 300;
+    font-size: 0.8rem;
+    font-weight: 200;
 
     cursor: pointer;
 
@@ -144,8 +144,8 @@ body {
 }
 
 .navPill {
-    width: 9px;
-    height: 9px;
+    width: 7px;
+    height: 7px;
 
     border: none;
     border-radius: 999px;
@@ -175,7 +175,7 @@ body {
 }
 
 .socials svg {
-    font-size: 18px;
+    font-size: 14px;
 
     cursor: pointer;
 }
@@ -279,12 +279,12 @@ body {
 
     z-index: 100;
 
-    background: rgba(20, 20, 20, .12);
+    background: rgba(20, 20, 20, 0.067);
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(15px);
 
-    border-right: 1px solid rgba(255, 255, 255, .05);
+    border-right: 1px solid rgba(255, 255, 255, .022);
 }
 
 .menuPanel.open {
@@ -401,11 +401,13 @@ body {
 .introText h3 {
     margin-bottom: 26px;
 
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
-    font-weight: 300;
+    font-weight: 200;
 
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+
+    opacity: 0.6;
 
     color: var(--off-white);
 }
@@ -441,52 +443,383 @@ body {
     left: 30px;
 }
 
-.educationContent {
+/* projects */
+.projectsContent {
     position: absolute;
 
-    top: 62%;
-    left: 64%;
+    top: 50%;
+    left: 50%;
 
     transform: translate(-50%, -50%);
 
     display: flex;
-    flex-direction: column;
-
-    gap: 24px;
+    gap: 42px;
 
     z-index: 2;
 }
 
-.educationRow {
-    display: flex;
-    gap: 28px;
+.projectColumn {
+    width: 550px;
 }
 
-.educationCard {
-    width: 300px;
+.projectTile {
+    width: 100%;
+    height: 330px;
 
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
+    margin-bottom: 32px;
+
+    border-radius: 34px;
+
+    background: rgba(20, 20, 20, .12);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.022);
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-.educationCard p {
+.projectOverlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0);
+
+    opacity: 0;
+
+    transition: opacity .25s ease, background-color .25s ease;
+
+    pointer-events: none;
+}
+
+.projectOverlay svg {
+    color: var(--off-white);
+
+    transform: scale(.9);
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+    opacity: 0;
+}
+
+.projectColumn p {
     font-size: 0.78rem;
 
     font-weight: 200;
 
     line-height: 1.4;
 
-    text-align: justify;
+    text-align: left;
 
     color: var(--off-white);
 }
 
-.educationBadge {
-    width: 42px;
-    height: 42px;
+.projectColumn h3 {
+    margin-bottom: 10px;
 
-    object-fit: contain;
+    font-size: 0.8rem;
+
+    font-weight: 200;
+
+    letter-spacing: -0.01em;
+
+    opacity: 0.6;
+
+    color: var(--off-white);
+}
+
+.projectTile,
+.projectColumn h3 {
+    transition: transform 0.25s ease;
+}
+
+.projectTile {
+    cursor: pointer;
+}
+
+.projectColumn h3 {
+    cursor: pointer;
+}
+
+.projectTile:hover {
+    transform: translateY(-4px);
+}
+
+.projectColumn h3:hover {
+    transform: translateY(-2px);
+}
+
+.projectTile:hover .projectOverlay {
+    opacity: 1;
+
+    background: rgba(0, 0, 0, .28);
+}
+
+.projectTile:hover .projectOverlay svg {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+.projectImage {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: inherit;
+}
+
+/* experience */
+.experienceContent {
+    position: absolute;
+
+    top: 60%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    gap: 32px;
+
+    z-index: 2;
+}
+
+.experienceText {
+    width: 500px;
+
+    position: relative;
+    top: 25px;
+}
+
+.experienceText p {
+    margin-bottom: 14px;
+
+    font-size: 0.78rem;
+
+    font-weight: 200;
+
+    line-height: 1.4;
+
+    text-align: left;
+
+    color: var(--off-white);
+}
+
+.experienceText h3 {
+    margin-bottom: 4px;
+
+    font-size: 0.8rem;
+
+    font-weight: 200;
+
+    letter-spacing: -0.01em;
+
+    opacity: 0.6;
+
+    color: var(--off-white);
+}
+
+.experienceItem {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 28px;
+
+    margin-bottom: 20px;
+}
+
+.experienceYear {
+    width: 30px;
 
     flex-shrink: 0;
+
+    font-size: 0.7rem;
+
+    font-weight: 200;
+
+    letter-spacing: -0.01em;
+
+    opacity: 0.6;
+
+    color: var(--off-white);
+}
+
+.experienceInfo {
+    flex: 1;
+}
+
+.experienceCard {
+    width: 530px;
+    height: 330px;
+
+    padding: 30px;
+
+    border-radius: 34px;
+
+    background: rgba(20, 20, 20, .12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .022);
+
+    transition: transform .25s ease;
+
+    cursor: pointer;
+}
+
+.experienceCard:hover {
+    transform: translateY(-3px);
+}
+
+.experienceText {
+    width: 100%;
+
+    margin-bottom: 0;
+}
+
+/* education */
+.educationGrid {
+    position: absolute;
+
+    top: 52%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    z-index: 2;
+}
+
+.educationTile {
+    width: 500px;
+    height: 220px;
+
+    padding: 28px;
+
+    border-radius: 34px;
+
+    background: rgba(20, 20, 20, .12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.022);
+
+    transition: transform .25s ease;
+
+    cursor: pointer;
+}
+
+.educationTile:hover {
+    transform: translateY(-3px);
+}
+
+.educationBadge {
+    width: 17px;
+    height: 17px;
+
+    object-fit: contain;
+}
+
+.educationTile p {
+    font-size: 0.7rem;
+
+    font-weight: 200;
+
+    line-height: 1.4;
+
+    text-align: left;
+
+    color: var(--off-white);
+}
+
+.educationYear {
+    display: block;
+
+    font-size: 0.7rem;
+
+    font-weight: 200;
+
+    opacity: 0.6;
+
+    color: var(--off-white);
+}
+
+.educationTile h3 {
+    margin-bottom: 2px;
+
+    font-size: 0.79rem;
+
+    font-weight: 300;
+
+    letter-spacing: -0.01em;
+
+    color: var(--off-white);
+}
+
+.educationBadges {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 12px;
+}
+
+.educationBadgeLarge {
+    width: 30px;
+    height: 30px;
+
+    /* need this higher */
+}
+
+.educationItem {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 28px;
+
+    margin-bottom: 27px;
+}
+
+.titleYear {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.educationInfo p {
+    font-size: 0.71rem;
+
+    font-weight: 200;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    opacity: 0.6;
+
+    color: var(--off-white);
+
+    margin-bottom: 2.5px;
 }

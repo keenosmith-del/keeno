@@ -2,10 +2,9 @@ import "./App.css";
 import { useEffect, useRef, useState } from "react";
 
 import Intro from "./sections/Intro";
-import Home from "./sections/Home";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
+import Education from "./sections/Education";
+import ProjectSection1 from "./sections/ProjectSection1";
+import ProjectSection2 from "./sections/ProjectSection2";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 
@@ -231,15 +230,13 @@ function App() {
       >
         <Intro />
 
-        <Home />
+        <ProjectSection1 />
 
-        <About />
-
-        <Skills />
-
-        <Projects />
+        <ProjectSection2 />
 
         <Experience />
+
+        <Education />
 
         <Contact />
 
@@ -254,7 +251,7 @@ function App() {
       </button>
 
       <nav className="navigationPills">
-        {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+        {[0, 1, 2, 3, 4, 5].map((index) => (
           <button
             key={index}
             className={`navPill ${activeSection === index ? "active" : ""}`}

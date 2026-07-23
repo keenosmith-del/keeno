@@ -21,7 +21,7 @@ const Intro = () => {
                     <h2>Keeno Smith.</h2>
 
                     <h3>
-                        Title
+                        Full-Stack Software Engineer and Web Designer
                     </h3>
 
                     <p>
