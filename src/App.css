@@ -104,11 +104,13 @@ body {
 
     font-size: 0.8rem;
     font-weight: 300;
+
+    cursor: default;
 }
 
 .menuItemStatic svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
 
     flex-shrink: 0;
 }
@@ -118,14 +120,14 @@ body {
 }
 
 .menuItem:hover {
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 
     color: var(--off-white);
 }
 
 .menuItem svg {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
 
     flex-shrink: 0;
 }
@@ -521,6 +523,8 @@ body {
     text-align: left;
 
     color: var(--off-white);
+
+    margin-bottom: 20px;
 }
 
 .projectColumn h3 {
@@ -542,6 +546,14 @@ body {
     transition: transform 0.25s ease;
 }
 
+.projectLinkRow h2 {
+    font-size: 0.7rem;
+
+    font-weight: 200;
+
+    letter-spacing: -0.01em;
+}
+
 .projectTile {
     cursor: pointer;
 }
@@ -551,7 +563,7 @@ body {
 }
 
 .projectTile:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .projectColumn h3:hover {
@@ -579,6 +591,34 @@ body {
     object-fit: cover;
 
     border-radius: inherit;
+}
+
+.projectLinkRow {
+    margin-top: 7px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    height: 10px;
+
+    color: rgba(231, 226, 217, 0.55);
+
+    font-size: 0.8rem;
+    font-weight: 200;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+
+}
+
+.projectLinkRow:hover {
+    transform: translateY(-1px);
+
+    color: var(--off-white);
 }
 
 /* experience */
@@ -785,8 +825,8 @@ body {
 }
 
 .educationBadgeLarge {
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
 
     /* need this higher */
 }
@@ -822,4 +862,241 @@ body {
     color: var(--off-white);
 
     margin-bottom: 2.5px;
+}
+
+/* contact */
+.contactCard {
+    width: 480px;
+    height: 250px;
+
+    padding: 30px;
+
+    border-radius: 34px;
+
+    background: rgba(20, 20, 20, .12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .022);
+
+    transition: transform .25s ease;
+
+    /* cursor: pointer; */
+
+    /* center this */
+}
+
+.contactCard:hover {
+    transform: translateY(-3px);
+}
+
+.contactContent {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    gap: 32px;
+
+    z-index: 2;
+}
+
+.contactRow p {
+    font-size: 0.71rem;
+
+    font-weight: 200;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    /* opacity: 0.6; */
+
+    color: var(--off-white);
+
+    margin-bottom: 1.5px;
+}
+
+.contactRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    height: 30px;
+
+    color: var(--off-white);
+
+    font-size: 0.8rem;
+    font-weight: 200;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+}
+
+.contactRowStatic {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    height: 30px;
+
+    color: rgba(231, 226, 217, 0.55);
+
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+
+/* skills */
+.skillsContent {
+    position: absolute;
+
+    top: 55%;
+    left: 50%;
+
+    height: 420px;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 42px;
+
+    z-index: 2;
+}
+
+.skillsArrow {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background: transparent;
+
+    color: var(--off-white);
+
+    cursor: pointer;
+
+    transition: transform .25s ease;
+}
+
+.skillsArrow:hover {
+    transform: translateY(-3px);
+}
+
+.skillsViewport {
+    width: 1100px;
+    height: 400px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+.skillsTrack {
+
+    display: flex;
+    align-items: center;
+
+    gap: 36px;
+
+    padding-left: 30px;
+
+    margin-left: -138px;
+
+    transition:
+        margin-left .45s ease;
+}
+
+.skillTile {
+
+    flex: 0 0 240px;
+
+    height: 300px;
+
+    border-radius: 34px;
+
+    background: rgba(20, 20, 20, .08);
+
+    border: 1px solid rgba(255, 255, 255, .022);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    opacity: .55;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease,
+        background .25s ease;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.skillTile:hover {
+
+    transform: translateY(-3px);
+
+    opacity: .8;
+
+    background: rgba(20, 20, 20, .14);
+}
+
+.skillTile.active {
+
+    opacity: 1;
+
+    transform: scale(1.18);
+
+    background: rgba(20, 20, 20, .16);
+
+    z-index: 2;
+}
+
+.skillTile.active:hover {
+
+    transform: translateY(-3px) scale(1.18);
+}
+
+.skillTile svg {
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 18px;
+
+    color: var(--off-white);
+
+    opacity: .9;
+}
+
+.skillTile h3 {
+
+    font-size: .82rem;
+
+    font-weight: 200;
+
+    letter-spacing: -0.01em;
+
+    color: var(--off-white);
 }

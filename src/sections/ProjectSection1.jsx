@@ -1,13 +1,19 @@
 import preview1 from "../assets/1.png";
 import preview2 from "../assets/2.png";
 
-import { SquareArrowOutUpRight } from "lucide-react";
+import {
+    SquareArrowOutUpRight,
+    Link,
+    PictureInPicture2,
+} from "lucide-react";
+
+import { FaGithub } from "react-icons/fa";
 
 const ProjectSection1 = () => {
     return (
         <section className="section projects">
 
-            <h1 className="heroTitle">HELLO.</h1>
+            <h1 className="heroTitle">PROJ.</h1>
 
             <div className="projectsContent">
 
@@ -37,6 +43,21 @@ const ProjectSection1 = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
 
+                    <div className="projectLinkRow">
+                        <FaGithub size={12} strokeWidth={1.2} />
+                        <h2>GitHub Repository</h2>
+                    </div>
+
+                    <div className="projectLinkRow">
+                        <PictureInPicture2 size={12} strokeWidth={1.5} />
+                        <h2>Live Preview</h2>
+                    </div>
+
+                    <div className="projectLinkRow">
+                        <Link size={12} strokeWidth={1.5} />
+                        <h2>Website URL</h2>
+                    </div>
+
                 </div>
 
                 <div className="projectColumn projectLink">
@@ -64,6 +85,21 @@ const ProjectSection1 = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </p>
+
+                    <div className="projectLinkRow">
+                        <FaGithub size={12} strokeWidth={1.2} />
+                        <h2>GitHub Repository</h2>
+                    </div>
+
+                    <div className="projectLinkRow">
+                        <PictureInPicture2 size={12} strokeWidth={1.5} />
+                        <h2>Live Preview</h2>
+                    </div>
+
+                    <div className="projectLinkRow">
+                        <Link size={12} strokeWidth={1.5} />
+                        <h2>Website URL</h2>
+                    </div>
 
                 </div>
 

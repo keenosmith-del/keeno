@@ -2,7 +2,7 @@ const Experience = () => {
     return (
         <section className="section experience">
 
-            <h1 className="heroTitle">HELLO.</h1>
+            <h1 className="heroTitle">WORK.</h1>
 
             <div className="experienceContent">
 
@@ -11,6 +11,7 @@ const Experience = () => {
                     <div className="experienceText">
 
                         {/* Left card content */}
+                        {/* add EXPERIENCE title above left glass card */}
 
                         <div className="experienceItem">
 

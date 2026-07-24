@@ -12,7 +12,7 @@ const Education = () => {
     return (
         <section className="section home">
 
-            <h1 className="heroTitle">HELLO.</h1>
+            <h1 className="heroTitle">EDU.</h1>
 
             <div className="educationGrid">
 
