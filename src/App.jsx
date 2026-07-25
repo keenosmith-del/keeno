@@ -5,6 +5,7 @@ import Intro from "./sections/Intro";
 import Education from "./sections/Education";
 import ProjectSection1 from "./sections/ProjectSection1";
 import ProjectSection2 from "./sections/ProjectSection2";
+import ProjectSection3 from "./sections/ProjectSection3";
 import Skills from "./sections/Skills";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
@@ -151,29 +152,37 @@ function App() {
             className={`menuItem ${activeSection === 3 ? "active" : ""}`}
             onClick={() => scrollToSection(3)}
           >
-            <Puzzle size={14} strokeWidth={1} />
-            <span>Skills</span>
+            <FolderOpen size={14} strokeWidth={1} />
+            <span>Projects III</span>
           </div>
 
           <div
             className={`menuItem ${activeSection === 4 ? "active" : ""}`}
             onClick={() => scrollToSection(4)}
           >
-            <GraduationCap size={14} strokeWidth={1} />
-            <span>Education</span>
+            <Puzzle size={14} strokeWidth={1} />
+            <span>Skills</span>
           </div>
 
           <div
             className={`menuItem ${activeSection === 5 ? "active" : ""}`}
             onClick={() => scrollToSection(5)}
           >
-            <Briefcase size={14} strokeWidth={1} />
-            <span>Experience</span>
+            <GraduationCap size={14} strokeWidth={1} />
+            <span>Education</span>
           </div>
 
           <div
             className={`menuItem ${activeSection === 6 ? "active" : ""}`}
             onClick={() => scrollToSection(6)}
+          >
+            <Briefcase size={14} strokeWidth={1} />
+            <span>Experience</span>
+          </div>
+
+          <div
+            className={`menuItem ${activeSection === 7 ? "active" : ""}`}
+            onClick={() => scrollToSection(7)}
           >
             <MessageCircle size={14} strokeWidth={1} />
             <span>Contact</span>
@@ -250,7 +259,9 @@ function App() {
 
           <div className="menuSpacer" />
 
+
           {/* contact */}
+          {/*
           <div className="menuItemStatic">
             <Phone size={14} strokeWidth={1} />
             <span>+27 82 415 8441</span>
@@ -260,6 +271,7 @@ function App() {
             <Mail size={14} strokeWidth={1} />
             <span>business.keenosmith@icloud.com</span>
           </div>
+          */}
 
         </div>
 
@@ -275,11 +287,13 @@ function App() {
 
         <ProjectSection2 />
 
+        <ProjectSection3 />
+
         <Skills />
 
-        <Experience />
-
         <Education />
+
+        <Experience />
 
         <Contact />
 
@@ -294,7 +308,7 @@ function App() {
       </button>
 
       <nav className="navigationPills">
-        {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
           <button
             key={index}
             className={`navPill ${activeSection === index ? "active" : ""}`}

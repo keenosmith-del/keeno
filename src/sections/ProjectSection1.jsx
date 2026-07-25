@@ -28,7 +28,7 @@ const ProjectSection1 = () => {
                         />
 
                         <div className="projectOverlay">
-                            <SquareArrowOutUpRight
+                            <PictureInPicture2
                                 size={25}
                                 strokeWidth={1.2}
                             />
@@ -71,7 +71,8 @@ const ProjectSection1 = () => {
                         />
 
                         <div className="projectOverlay">
-                            <SquareArrowOutUpRight
+                            {/* either onclick preview or onclick SquareArrowOutRight go to site */}
+                            <PictureInPicture2
                                 size={25}
                                 strokeWidth={1.2}
                             />

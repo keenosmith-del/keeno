@@ -1,5 +1,5 @@
-import preview3 from "../assets/3.png";
-import preview4 from "../assets/4.png";
+import preview5 from "../assets/5.png";
+import preview6 from "../assets/6.png";
 
 import {
     SquareArrowOutUpRight,
@@ -9,7 +9,7 @@ import {
 
 import { FaGithub } from "react-icons/fa";
 
-const ProjectSection2 = () => {
+const ProjectSection3 = () => {
     return (
         <section className="section projects">
 
@@ -22,7 +22,7 @@ const ProjectSection2 = () => {
                     <div className="projectTile">
 
                         <img
-                            src={preview3}
+                            src={preview5}
                             alt="Project Preview"
                             className="projectImage"
                         />
@@ -65,7 +65,7 @@ const ProjectSection2 = () => {
                     <div className="projectTile">
 
                         <img
-                            src={preview4}
+                            src={preview6}
                             alt="Project Preview"
                             className="projectImage"
                         />
@@ -109,4 +109,4 @@ const ProjectSection2 = () => {
     );
 };
 
-export default ProjectSection2;
+export default ProjectSection3;
