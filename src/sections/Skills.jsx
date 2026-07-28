@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
 import {
     siReact,
     siJavascript,
@@ -10,25 +8,22 @@ import {
     siMongodb,
     siDocker,
     siGit,
-    // siAmazonwebservices,
+    siHtml5,
+    siCss,
+    siVite,
+    siGithub,
+    siPostman,
     siPython,
+    siPostgresql,
+    // siOpenai,
+    siFastapi,
 } from "simple-icons";
 
+import { FaAws } from "react-icons/fa";
+
+import { siOpenai } from "../icons/openai";
+
 const Skills = () => {
-    // changes checkpoint
-
-    const [viewIndex, setViewIndex] = useState(1);
-
-    const [activeTile, setActiveTile] = useState(2);
-
-    const offsets = {
-        0: 0,
-        1: -138,
-        2: -310,
-        3: -586,
-    };
-
-    const maxViewIndex = Object.keys(offsets).length - 1;
 
     const BrandIcon = ({ icon }) => (
         <svg
@@ -48,122 +43,158 @@ const Skills = () => {
 
             <div className="skillsContent">
 
-                {viewIndex > 0 && (
-                    <button
-                        className="skillsArrow"
-                        onClick={() => {
+                <div className="skillsGrid">
 
-                            if (viewIndex > 0) {
-                                setViewIndex(viewIndex - 1);
-                            }
+                    {/* tiles */}
+                    <div className="skillTile">
+                        <BrandIcon icon={siNodedotjs} />
 
-                        }}
-                    >
-                        <ArrowLeft
-                            size={22}
-                            strokeWidth={1.2}
-                        />
-                    </button>
-                )}
-
-                <div className="skillsViewport">
-
-                    <div
-                        className="skillsTrack"
-                        style={{
-                            marginLeft: `${offsets[viewIndex]}px`,
-                        }}
-                    >
-
-                        {/* tiles */}
-                        <div
-                            className={`skillTile ${activeTile === 0 ? "active" : ""}`}
-                            onClick={() => setActiveTile(0)}
-                        >
-                            <BrandIcon icon={siNodedotjs} />
-
+                        <div>
                             <h3>Node.js</h3>
-
+                            <p>Runtime Environment</p>
                         </div>
+                    </div>
 
-                        <div
-                            className={`skillTile ${activeTile === 1 ? "active" : ""}`}
-                            onClick={() => setActiveTile(1)}
-                        >
-                            <BrandIcon icon={siDocker} />
+                    <div className="skillTile">
+                        <BrandIcon icon={siDocker} />
 
+                        <div>
                             <h3>Docker</h3>
+                            <p>Container Platform</p>
                         </div>
+                    </div>
 
-                        {/* middle tile */}
-                        <div
-                            className={`skillTile ${activeTile === 2 ? "active" : ""}`}
-                            onClick={() => setActiveTile(2)}
-                        >
-                            <BrandIcon icon={siReact} />
+                    <div className="skillTile">
+                        <BrandIcon icon={siReact} />
 
+                        <div>
                             <h3>React</h3>
+                            <p>Frontend Library</p>
                         </div>
+                    </div>
 
-                        <div
-                            className={`skillTile ${activeTile === 3 ? "active" : ""}`}
-                            onClick={() => setActiveTile(3)}
-                        >
-                            <BrandIcon icon={siMongodb} />
+                    <div className="skillTile">
+                        <BrandIcon icon={siMongodb} />
 
+                        <div>
                             <h3>MongoDB</h3>
+                            <p>NoSQL Database</p>
                         </div>
+                    </div>
 
-                        <div
-                            className={`skillTile ${activeTile === 4 ? "active" : ""}`}
-                            onClick={() => setActiveTile(4)}
-                        >
-                            <BrandIcon icon={siExpress} />
+                    <div className="skillTile">
+                        <BrandIcon icon={siExpress} />
 
+                        <div>
                             <h3>Express</h3>
+                            <p>Backend Framework</p>
                         </div>
+                    </div>
 
-                        <div
-                            className={`skillTile ${activeTile === 5 ? "active" : ""}`}
-                            onClick={() => setActiveTile(5)}
-                        >
-                            <BrandIcon icon={siPython} />
+                    <div className="skillTile">
+                        <BrandIcon icon={siPython} />
 
+                        <div>
                             <h3>Python</h3>
-
-                        </div>
-
-                        <div
-                            className={`skillTile ${activeTile === 6 ? "active" : ""}`}
-                            onClick={() => setActiveTile(6)}
-                        >
-                            <BrandIcon icon={siJavascript} />
-
-                            <h3>JavaScript</h3>
-
+                            <p>Programming Language</p>
                         </div>
 
                     </div>
 
+                    <div className="skillTile">
+                        <BrandIcon icon={siJavascript} />
+
+                        <div>
+                            <h3>JavaScript</h3>
+                            <p>Programming Language</p>
+                        </div>
+
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siGit} />
+
+                        <div>
+                            <h3>Git</h3>
+                            <p>Version Control</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siGithub} />
+
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>Code Collaboration</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siHtml5} />
+
+                        <div>
+                            <h3>HTML5</h3>
+                            <p>Markup Language</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siCss} />
+
+                        <div>
+                            <h3>CSS3</h3>
+                            <p>Styling Language</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siPostman} />
+
+                        <div>
+                            <h3>Postman</h3>
+                            <p>Testing</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siPostgresql} />
+
+                        <div>
+                            <h3>SQL</h3>
+                            <p>Relational Database</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <FaAws className="brandIcon" />
+
+                        <div>
+                            <h3>AWS</h3>
+                            <p>Cloud Platform</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <div className="skillIcon skillIconOpenAI">
+                            <BrandIcon icon={siOpenai} />
+                        </div>
+
+                        <div className="skillInfo">
+                            <h3>OpenAI</h3>
+                            <p>AI Integration</p>
+                        </div>
+                    </div>
+
+                    <div className="skillTile">
+                        <BrandIcon icon={siFastapi} />
+
+                        <div>
+                            <h3>REST APIs</h3>
+                            <p>API Development</p>
+                        </div>
+                    </div>
+
                 </div>
-
-                {viewIndex < maxViewIndex && (
-                    <button
-                        className="skillsArrow"
-                        onClick={() => {
-
-                            if (viewIndex < maxViewIndex) {
-                                setViewIndex(viewIndex + 1);
-                            }
-
-                        }}
-                    >
-                        <ArrowRight
-                            size={22}
-                            strokeWidth={1.2}
-                        />
-                    </button>
-                )}
 
             </div>
 

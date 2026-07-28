@@ -5,6 +5,8 @@ import {
     Phone,
 } from "lucide-react";
 
+import { SendHorizontal } from "lucide-react";
+
 import {
     FaGithub,
     FaLinkedin,
@@ -49,6 +51,35 @@ const Contact = () => {
                         <Download size={15} strokeWidth={1.3} />
                         <p>Download CV</p>
                     </div>
+
+                </div>
+
+                <div className="contactFormCard">
+
+                    <div className="contactInput">
+                        <input
+                            type="text"
+                            placeholder="Full Name"
+                        />
+                    </div>
+
+                    <div className="contactInput">
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                        />
+                    </div>
+
+                    <div className="contactMessage">
+                        <textarea
+                            placeholder="Message..."
+                        />
+                    </div>
+
+                    <button className="contactButton">
+                        <span>Send</span>
+                        <SendHorizontal size={16} strokeWidth={1.7} />
+                    </button>
 
                 </div>
 

@@ -1,5 +1,5 @@
-import preview3 from "../assets/3.png";
-import preview4 from "../assets/4.png";
+import preview3 from "../assets/5.png";
+import preview4 from "../assets/6.png";
 
 import {
     SquareArrowOutUpRight,

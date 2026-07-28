@@ -1,14 +1,19 @@
 import "./App.css";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Intro from "./sections/Intro";
 import Education from "./sections/Education";
 import ProjectSection1 from "./sections/ProjectSection1";
 import ProjectSection2 from "./sections/ProjectSection2";
 import ProjectSection3 from "./sections/ProjectSection3";
+import ProjectSection4 from "./sections/ProjectSection4";
+
 import Skills from "./sections/Skills";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
+
+import CV from "./pages/CV";
 
 import {
   Grip,
@@ -23,6 +28,7 @@ import {
   UserRound,
   MessageCircle,
   Puzzle,
+  SquareArrowOutUpRight,
 } from "lucide-react";
 
 import {
@@ -160,10 +166,19 @@ function App() {
             className={`menuItem ${activeSection === 4 ? "active" : ""}`}
             onClick={() => scrollToSection(4)}
           >
+            <FolderOpen size={14} strokeWidth={1} />
+            <span>Projects IV</span>
+          </div>
+
+          <div
+            className={`menuItem ${activeSection === 5 ? "active" : ""}`}
+            onClick={() => scrollToSection(5)}
+          >
             <Puzzle size={14} strokeWidth={1} />
             <span>Skills</span>
           </div>
 
+          {/*
           <div
             className={`menuItem ${activeSection === 5 ? "active" : ""}`}
             onClick={() => scrollToSection(5)}
@@ -179,10 +194,11 @@ function App() {
             <Briefcase size={14} strokeWidth={1} />
             <span>Experience</span>
           </div>
+          */}
 
           <div
-            className={`menuItem ${activeSection === 7 ? "active" : ""}`}
-            onClick={() => scrollToSection(7)}
+            className={`menuItem ${activeSection === 6 ? "active" : ""}`}
+            onClick={() => scrollToSection(6)}
           >
             <MessageCircle size={14} strokeWidth={1} />
             <span>Contact</span>
@@ -247,9 +263,12 @@ function App() {
           <div className="menuSpacer" />
 
           {/* downloads */}
-          <div className="menuItem">
-            <Download size={14} strokeWidth={1} />
-            <span>Download CV</span>
+          <div
+            className="menuItem"
+            onClick={() => window.open("/cv.html", "_blank")}
+          >
+            <SquareArrowOutUpRight size={14} strokeWidth={1} />
+            <span>View CV</span>
           </div>
 
           <div className="menuItem">
@@ -289,11 +308,9 @@ function App() {
 
         <ProjectSection3 />
 
+        <ProjectSection4 />
+
         <Skills />
-
-        <Education />
-
-        <Experience />
 
         <Contact />
 
@@ -308,7 +325,7 @@ function App() {
       </button>
 
       <nav className="navigationPills">
-        {[0, 1, 2, 3, 4, 5, 6, 7].map((index) => (
+        {[0, 1, 2, 3, 4, 5, 6].map((index) => (
           <button
             key={index}
             className={`navPill ${activeSection === index ? "active" : ""}`}
