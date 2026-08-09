@@ -192,7 +192,7 @@ body,
 
     font-family: var(--font);
 
-    font-size: .78rem;
+    font-size: .75rem;
 
     font-weight: 300;
 
@@ -219,7 +219,7 @@ body,
 
     font-family: var(--font);
 
-    font-size: .78rem;
+    font-size: .77rem;
 
     font-weight: 300;
 
@@ -227,7 +227,7 @@ body,
 
     color: var(--cv-text-secondary);
 
-    text-align: justify;
+    text-align: right;
 }
 
 .cvContact {
@@ -261,7 +261,7 @@ body,
 
     position: absolute;
 
-    top: 380px;
+    top: 390px;
     right: 80px;
 
     width: 220px;
@@ -425,13 +425,13 @@ body,
 
 .educationInfo h4 {
 
-    margin: 2px 0 12px;
+    margin: 2px 0 12px; 
 
-    font-size: .8rem;
+    font-size: .7rem;
 
     font-weight: 300;
 
-    color: var(--cv-text-secondary);
+    color: var(--cv-text);
 }
 
 .educationInfo p {

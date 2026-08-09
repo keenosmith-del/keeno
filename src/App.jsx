@@ -3,14 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Intro from "./sections/Intro";
-import Education from "./sections/Education";
 import ProjectSection1 from "./sections/ProjectSection1";
 import ProjectSection2 from "./sections/ProjectSection2";
 import ProjectSection3 from "./sections/ProjectSection3";
 import ProjectSection4 from "./sections/ProjectSection4";
-
-import Skills from "./sections/Skills";
-import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 
 import CV from "./pages/CV";
@@ -38,15 +34,20 @@ import {
   FaLinkedin,
   FaTwitter,
   FaGitlab,
+  FaYoutube,
+  FaDiscord,
 } from "react-icons/fa";
 
 import { BsBluesky } from "react-icons/bs";
+import { SiFiverr } from "react-icons/si";
 
 function App() {
   const contentRef = useRef(null);
   const [activeSection, setActiveSection] = useState(0);
 
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [showProjects, setShowProjects] = useState(false);
 
   // cursor light
   useEffect(() => {
@@ -143,7 +144,7 @@ function App() {
             onClick={() => scrollToSection(1)}
           >
             <FolderOpen size={14} strokeWidth={1} />
-            <span>Projects I</span>
+            <span>Project I</span>
           </div>
 
           <div
@@ -151,7 +152,7 @@ function App() {
             onClick={() => scrollToSection(2)}
           >
             <FolderOpen size={14} strokeWidth={1} />
-            <span>Projects II</span>
+            <span>Project II</span>
           </div>
 
           <div
@@ -159,7 +160,7 @@ function App() {
             onClick={() => scrollToSection(3)}
           >
             <FolderOpen size={14} strokeWidth={1} />
-            <span>Projects III</span>
+            <span>Project III</span>
           </div>
 
           <div
@@ -167,9 +168,10 @@ function App() {
             onClick={() => scrollToSection(4)}
           >
             <FolderOpen size={14} strokeWidth={1} />
-            <span>Projects IV</span>
+            <span>Project IV</span>
           </div>
 
+          {/*
           <div
             className={`menuItem ${activeSection === 5 ? "active" : ""}`}
             onClick={() => scrollToSection(5)}
@@ -177,6 +179,7 @@ function App() {
             <Puzzle size={14} strokeWidth={1} />
             <span>Skills</span>
           </div>
+          */}
 
           {/*
           <div
@@ -197,8 +200,8 @@ function App() {
           */}
 
           <div
-            className={`menuItem ${activeSection === 6 ? "active" : ""}`}
-            onClick={() => scrollToSection(6)}
+            className={`menuItem ${activeSection === 5 ? "active" : ""}`}
+            onClick={() => scrollToSection(5)}
           >
             <MessageCircle size={14} strokeWidth={1} />
             <span>Contact</span>
@@ -209,22 +212,7 @@ function App() {
           {/* links */}
           <div className="menuItem">
             <Globe size={14} strokeWidth={1} />
-            <span>Web Project 1</span>
-          </div>
-
-          <div className="menuItem">
-            <Globe size={14} strokeWidth={1} />
-            <span>Web Project 2</span>
-          </div>
-
-          <div className="menuItem">
-            <Globe size={14} strokeWidth={1} />
-            <span>Web Project 3</span>
-          </div>
-
-          <div className="menuItem">
-            <Globe size={14} strokeWidth={1} />
-            <span>Web Project 4</span>
+            <span>Web Projects</span>
           </div>
 
           <div className="menuSpacer" />
@@ -236,13 +224,33 @@ function App() {
           </div>
 
           <div className="menuItem">
-            <BsBluesky />
-            <span>Bluesky</span>
+            <FaGitlab size={14} strokeWidth={1} />
+            <span>GitLab</span>
           </div>
 
           <div className="menuItem">
             <FaLinkedin />
             <span>LinkedIn</span>
+          </div>
+
+          <div className="menuItem">
+            <FaDiscord />
+            <span>Discord</span>
+          </div>
+
+          <div className="menuItem">
+            <SiFiverr size={40} color="currentColor" />
+            <span>Fiverr</span>
+          </div>
+
+          <div className="menuItem">
+            <BsBluesky />
+            <span>Bluesky</span>
+          </div>
+
+          <div className="menuItem">
+            <FaRedditAlien />
+            <span>Reddit</span>
           </div>
 
           <div className="menuItem">
@@ -256,8 +264,8 @@ function App() {
           </div>
 
           <div className="menuItem">
-            <FaRedditAlien />
-            <span>Reddit</span>
+            <FaYoutube />
+            <span>YouTube</span>
           </div>
 
           <div className="menuSpacer" />
@@ -271,10 +279,12 @@ function App() {
             <span>View CV</span>
           </div>
 
+          {/*
           <div className="menuItem">
             <Download size={14} strokeWidth={1} />
             <span>Academic Record</span>
           </div>
+          */}
 
           <div className="menuSpacer" />
 
@@ -300,7 +310,11 @@ function App() {
         className="content"
         ref={contentRef}
       >
-        <Intro />
+        <Intro
+          showProjects={showProjects}
+          setShowProjects={setShowProjects}
+          setMenuOpen={setMenuOpen}
+        />
 
         <ProjectSection1 />
 
@@ -309,8 +323,6 @@ function App() {
         <ProjectSection3 />
 
         <ProjectSection4 />
-
-        <Skills />
 
         <Contact />
 
@@ -321,11 +333,11 @@ function App() {
         className="menuButton"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <Grip size={22} strokeWidth={1.3} />
+        <Grip size={22} strokeWidth={1.3} fill="currentColor" />
       </button>
 
       <nav className="navigationPills">
-        {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+        {[0, 1, 2, 3, 4, 5].map((index) => (
           <button
             key={index}
             className={`navPill ${activeSection === index ? "active" : ""}`}
@@ -339,14 +351,17 @@ function App() {
         ))}
       </nav>
 
-      <div className="socials">
+      <div className={`socials ${activeSection === 0 ? "visible" : "hidden"}`}>
         <FaGithub />
-        <FaRedditAlien />
-        <BsBluesky />
-        <FaInstagram />
-        <FaLinkedin />
-        <FaTwitter />
         <FaGitlab />
+        <FaLinkedin />
+        <FaDiscord />
+        <SiFiverr />
+        <BsBluesky />
+        <FaRedditAlien />
+        <FaInstagram />
+        <FaTwitter />
+        <FaYoutube />
       </div>
 
     </main>

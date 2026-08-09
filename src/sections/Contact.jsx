@@ -1,89 +1,251 @@
-import {
-    Mail,
-    Globe,
-    Download,
-    Phone,
-} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ArrowRight } from "lucide-react";
 
-import { SendHorizontal } from "lucide-react";
-
-import {
-    FaGithub,
-    FaLinkedin,
-    FaYoutube,
-} from "react-icons/fa";
+import signature from "../assets/cv/signature2.png";
 
 const Contact = () => {
+
+    const sectionRef = useRef(null);
+    const formRef = useRef(null);
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+
+    const [showToast, setShowToast] = useState(false);
+
+    const [invalidField, setInvalidField] = useState(null);
+    const [sending, setSending] = useState(false);
+
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+
+
+    useEffect(() => {
+        const section = sectionRef.current;
+
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    nameRef.current?.focus();
+                }
+            },
+            {
+                threshold: 0.6,
+            }
+        );
+
+        observer.observe(section);
+
+        return () => observer.disconnect();
+    }, []);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setForm((current) => ({
+            ...current,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validate Name
+        if (!form.name.trim()) {
+            setInvalidField("name");
+            nameRef.current?.focus();
+
+            setTimeout(() => {
+                setInvalidField(null);
+            }, 1800);
+
+            return;
+        }
+
+        // Validate Email
+        if (!form.email.trim()) {
+            setInvalidField("email");
+            emailRef.current?.focus();
+
+            setTimeout(() => {
+                setInvalidField(null);
+            }, 1800);
+
+            return;
+        }
+
+        // Validate Subject
+        if (!form.subject.trim()) {
+            setInvalidField("subject");
+
+            setTimeout(() => {
+                setInvalidField(null);
+            }, 1800);
+
+            return;
+        }
+
+        // Validate Message
+        if (!form.message.trim()) {
+            setInvalidField("message");
+
+            setTimeout(() => {
+                setInvalidField(null);
+            }, 1800);
+
+            return;
+        }
+
+        // Only start sending AFTER validation passes
+        setSending(true);
+
+        try {
+            const response = await emailjs.sendForm(
+                "service_hbhtr4l",
+                "template_xtmmpnl",
+                formRef.current,
+                {
+                    publicKey: "Wy06Fl_fod1rRHsv4",
+                }
+            );
+
+            console.log("EMAILJS SUCCESS");
+            console.log("STATUS:", response.status);
+            console.log("TEXT:", response.text);
+
+            setForm({
+                name: "",
+                email: "",
+                subject: "",
+                message: "",
+            });
+
+            setInvalidField(null);
+
+            setTimeout(() => {
+                nameRef.current?.focus();
+            }, 50);
+
+            setShowToast(true);
+
+            setTimeout(() => {
+                setShowToast(false);
+            }, 3500);
+
+        } catch (error) {
+            console.error("EMAILJS FAILED");
+            console.error("ERROR:", error);
+            console.error("ERROR TEXT:", error?.text);
+            console.error("ERROR STATUS:", error?.status);
+
+        } finally {
+            setSending(false);
+        }
+    };
+
     return (
-        <section className="section contact">
-            <h1 className="heroTitle">LINKS.</h1>
+        <section
+            ref={sectionRef}
+            className="section contact"
+        >
 
-            <div className="contactContent">
+            <h1 className="contactHero">
+                GET IN
+                <br />
+                TOUCH.
+            </h1>
 
-                <div className="contactCard">
+            <img
+                src={signature}
+                alt="Signature"
+                className="contactSignature"
+            />
 
-                    <div className="contactRowStatic">
-                        <Phone size={15} strokeWidth={1.3} color="#575757" />
-                        <p>+27 82 415 8441</p>
+            <form
+                ref={formRef}
+                className="contactCard"
+                onSubmit={handleSubmit}
+            >
+
+                <input
+                    ref={nameRef}
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={form.name}
+                    onChange={handleChange}
+                    className={`${form.name ? "hasValue" : ""} ${invalidField === "name" ? "invalid" : ""
+                        }`}
+                />
+
+                <input
+                    ref={emailRef}
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={form.email}
+                    onChange={handleChange}
+                    className={`${form.email ? "hasValue" : ""} ${invalidField === "email" ? "invalid" : ""
+                        }`}
+                />
+
+                <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    className={`${form.subject ? "hasValue" : ""} ${invalidField === "subject" ? "invalid" : ""
+                        }`}
+                />
+
+                <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows={6}
+                    value={form.message}
+                    onChange={handleChange}
+                    className={`${form.message ? "hasValue" : ""} ${invalidField === "message" ? "invalid" : ""
+                        }`}
+                />
+
+                <button
+                    type="submit"
+                    className="contactSendButton"
+                    disabled={sending}
+                >
+                    <span>
+                        {sending ? "Sending..." : "Send Message"}
+                    </span>
+
+                    <div className="contactSendArrow">
+                        <ArrowRight
+                            size={17}
+                            strokeWidth={1}
+                        />
+                    </div>
+                </button>
+
+            </form>
+
+            {showToast && (
+                <div className="contactToast">
+                    <div className="contactToastCheck">
+                        ✓
                     </div>
 
-                    <div className="contactRowStatic">
-                        <Mail size={15} strokeWidth={1.3} color="#575757" />
-                        <p>business.keenosmith@icloud.com</p>
-                    </div>
-
-                    <div className="contactRow">
-                        <FaGithub size={15} strokeWidth={1.3} />
-                        <p>Github</p>
-                    </div>
-
-                    <div className="contactRow">
-                        <FaLinkedin size={15} strokeWidth={1.3} />
-                        <p>LinkedIn</p>
-                    </div>
-
-                    <div className="contactRow">
-                        <FaYoutube size={15} strokeWidth={1.3} />
-                        <p>YouTube</p>
-                    </div>
-
-                    <div className="contactRow">
-                        <Download size={15} strokeWidth={1.3} />
-                        <p>Download CV</p>
-                    </div>
-
+                    <span>Message sent</span>
                 </div>
+            )}
 
-                <div className="contactFormCard">
-
-                    <div className="contactInput">
-                        <input
-                            type="text"
-                            placeholder="Full Name"
-                        />
-                    </div>
-
-                    <div className="contactInput">
-                        <input
-                            type="email"
-                            placeholder="Email Address"
-                        />
-                    </div>
-
-                    <div className="contactMessage">
-                        <textarea
-                            placeholder="Message..."
-                        />
-                    </div>
-
-                    <button className="contactButton">
-                        <span>Send</span>
-                        <SendHorizontal size={16} strokeWidth={1.7} />
-                    </button>
-
-                </div>
-
-            </div>
         </section>
     );
 };

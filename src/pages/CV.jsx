@@ -47,11 +47,9 @@ const CV = () => {
 
                 <div className="cvPortraitContact">
 
-                    <p>+27 82 415 8441</p>
-
                     <p>business.keenosmith@icloud.com</p>
 
-                    <p>keenosmith.dev</p>
+                    <p>https://github.com/keenosmith-del</p>
 
                 </div>
 
@@ -60,8 +58,7 @@ const CV = () => {
                     <h1>Smith.</h1>
 
                     <p className="cvTitle">
-                        Full-Stack Software Engineer<br />
-                        & Web Developer
+                        Full-Stack Software Engineer & Web Developer
                     </p>
 
                 </div>
@@ -70,28 +67,19 @@ const CV = () => {
 
                 <div className="cvContact">
 
-                    <p>+27 82 415 8441</p>
-
                     <p>business.keenosmith@icloud.com</p>
 
-                    <p>https://keenosmith.dev</p>
+                    <p>https://github.com/keenosmith-del</p>
 
                 </div>
 
                 <div className="cvBio">
 
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Full-Stack Software Engineer with over a decade of programming experience designing,
+                        developing, and deploying production-ready software across web, cloud, and AI technologies.
+                        Expertise spans software engineering, systems architecture, frontend and backend development, database engineering, and applied AI, with professional
+                        qualifications in Full-Stack Software Engineering, AWS AI & Machine Learning, Applied Generative AI, and Data Structures & Algorithms.
                     </p>
 
                 </div>
@@ -119,11 +107,13 @@ const CV = () => {
 
                                 <h3>Stellenbosch University</h3>
 
-                                <h4>Generative AI Course</h4>
+                                <h4>Generative AI Bootcamp</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Focuses on the fundamentals of machine learning, deep learning,
+                                    Large Language Models (LLMs), prompt engineering, generative AI,
+                                    and practical AI applications through hands-on projects, real-world case studies, and modern software engineering workflows.
+
                                 </p>
 
                             </div>
@@ -144,11 +134,13 @@ const CV = () => {
 
                                 <h3>Hyperion Dev</h3>
 
-                                <h4>Full-Stack Software Engineer and Web Development Bootcamp</h4>
+                                <h4>Full-Stack Software Engineering and Web Development Bootcamp</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Covers the complete software development lifecycle, including
+                                    frontend and backend development, software architecture, SQL and NoSQL
+                                    database design, RESTful APIs, the MERN stack, Python, Docker,
+                                    CI/CD workflows, version control, and modern software engineering practices through hands-on, project-based development.
                                 </p>
 
                             </div>
@@ -172,8 +164,12 @@ const CV = () => {
                                 <h4>AI/ML Scholar AI Practitioner Challenge</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Focuses on artificial intelligence, machine learning,
+                                    generative AI, foundation models, responsible AI, Amazon Bedrock,
+                                    AWS AI services, and the practical application of cloud-based AI
+                                    technologies to modern software engineering and intelligent application development.
+
+
                                 </p>
 
                             </div>
@@ -197,8 +193,11 @@ const CV = () => {
                                 <h4>AI Programmer Nanodegree</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Focuses on AI programming using Python, PyTorch, neural networks,
+                                    transformers, foundation models, and modern AI development workflows,
+                                    with practical application of machine learning, generative AI, and AWS technologies to build intelligent
+                                    software solutions.
+
                                 </p>
 
                             </div>
@@ -236,11 +235,13 @@ const CV = () => {
 
                                 <h3>University of Helsinki</h3>
 
-                                <h4>Full-Stack Open</h4>
+                                <h4>Full-Stack Open Certification</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Covers modern full-stack web development using React, Node.js, Express, MongoDB, GraphQL,
+                                    TypeScript, testing, cloud deployment, and modern JavaScript development practices through
+                                    comprehensive, project-based software engineering.
+
                                 </p>
 
                             </div>
@@ -264,8 +265,10 @@ const CV = () => {
                                 <h4>Generative AI for Software Engineers</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Focuses on applying Generative AI throughout the software development lifecycle,
+                                    including prompt engineering, AI-assisted coding, code comprehension, debugging, testing,
+                                    refactoring, documentation, pair programming with Large Language Models (LLMs), and modern AI-powered software engineering workflows.
+
                                 </p>
 
                             </div>
@@ -289,8 +292,11 @@ const CV = () => {
                                 <h4>BSc Computer Science</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Provides a comprehensive foundation in computer science,
+                                    including software engineering, programming, algorithms, data structures, database systems,
+                                    operating systems, computer networks, systems design, mathematics, and analytical problem-solving for
+                                    modern software development.
+
                                 </p>
 
                             </div>
@@ -323,13 +329,16 @@ const CV = () => {
 
                             <div className="educationInfo">
 
-                                <h3>Company Name</h3>
+                                <h3>Firstdaes Entertainment</h3>
 
-                                <h4>Full-Stack Software Engineer</h4>
+                                <h4>Co-Founder & Brand Strategist</h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Co-founded and helped grow a creative entertainment and branding business,
+                                    leading business strategy, brand development, marketing initiatives, and creative direction.
+                                    Worked closely with clients and collaborators to deliver branding and digital media solutions while developing strong leadership,
+                                    communication, project management, and strategic planning skills within a fast-paced entrepreneurial environment.
+
                                 </p>
 
                             </div>
@@ -340,71 +349,21 @@ const CV = () => {
 
                             <div className="experienceMeta">
 
-                                <div className="educationDot"></div>
-
-                                <span>Mar 2025<br />Jan 2026</span>
+                                <span><br /></span>
 
                             </div>
 
                             <div className="educationInfo">
 
-                                <h3>Company Name</h3>
+                                <h3></h3>
 
-                                <h4>Full-Stack Software Engineer</h4>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div className="experienceItem">
-
-                            <div className="experienceMeta">
-
-                                <div className="educationDot"></div>
-
-                                <span>Mar 2025<br />Jan 2026</span>
-
-                            </div>
-
-                            <div className="educationInfo">
-
-                                <h3>Company Name</h3>
-
-                                <h4>Full-Stack Software Engineer</h4>
+                                <h4></h4>
 
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
+                                    Professional software engineering experience has primarily been gained through freelance development, 
+                                    independent consulting, and building end-to-end software solutions from concept through deployment. 
+                                    Projects have involved full ownership of system architecture, frontend and backend development, database design, API integration, authentication, testing, deployment, and ongoing product support for real-world applications.
 
-                            </div>
-
-                        </div>
-
-                        <div className="experienceItem">
-
-                            <div className="experienceMeta">
-
-                                <div className="educationDot"></div>
-
-                                <span>Mar 2025<br />Jan 2026</span>
-
-                            </div>
-
-                            <div className="educationInfo">
-
-                                <h3>Company Name</h3>
-
-                                <h4>Full-Stack Software Engineer</h4>
-
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
 
                             </div>
@@ -445,6 +404,12 @@ const CV = () => {
                                     JavaScript Algorithms & Data Structures
                                     <br />
                                     Front End Development Libraries
+                                    <br />
+                                    Python Certification
+                                    <br />
+                                    Relational Databases
+                                    <br />
+                                    Back End Development and APIs
                                 </h4>
 
                             </div>
